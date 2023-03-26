@@ -32,6 +32,7 @@ import Bananas from "../../Crops/Bananas";
 import Mangoes from "../../Crops/Mangoes";
 import Walnuts from "../../Crops/Walnuts";
 import Import from "../../Import/Import";
+import Sensor from "../../Sensor/Sensor";
 import Accordion from "@mui/material/Accordion";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import AccordionSummary from "@mui/material/AccordionSummary";
@@ -503,6 +504,16 @@ class DashBoard extends React.Component {
               {" "}
               <ListItemText primary="Agriculture - Wheat/Rice" />
             </ListItem>
+
+            <Divider />
+            <ListItem
+              button
+              key="sensor"
+              onClick={() => this.changeGraphType("sensor")}
+            >
+              {" "}
+              <ListItemText primary="Sensor Data" />
+            </ListItem>
           </Box> 
         </Drawer>
         <Box
@@ -545,6 +556,7 @@ class DashBoard extends React.Component {
           {this.state.page === "bananas" ? <Bananas /> : null}
           {this.state.page === "mangoes" ? <Mangoes /> : null}
           {this.state.page === "walnuts" ? <Walnuts /> : null}
+          {this.state.page === "sensor" ? <Sensor /> : null}
         </Box>
       </div>
     );
